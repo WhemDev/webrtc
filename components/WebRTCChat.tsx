@@ -18,7 +18,7 @@ const WebRTCChat = () => {
   const [isUsernameSet, setIsUsernameSet] = useState(false);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001"); // Socket.IO sunucu adresi
+    const newSocket = io("https://webrtcserver-dus0.onrender.com"); // Socket.IO sunucu adresi
     setSocket(newSocket);
 
     // Gelen mesajları dinle
@@ -135,6 +135,7 @@ const WebRTCChat = () => {
           <input
             type="text"
             placeholder="Enter your name"
+            className="text-black"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             style={{ padding: "10px", fontSize: "16px", marginRight: "10px" }}
@@ -161,7 +162,7 @@ const WebRTCChat = () => {
             style={{
               border: "1px solid black",
               padding: "10px",
-              margin: "10px 0",
+              margin: "10px",
               maxHeight: "300px",
               overflowY: "auto",
             }}

@@ -4,7 +4,7 @@ const { Server } = require("socket.io");
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", // Next.js uygulamanızın adresi
+    origin: ["http://localhost:3000", "https://duetwebrtc.vercel.app"], // Next.js uygulamanızın adresi
     methods: ["GET", "POST"],
   },
 });
