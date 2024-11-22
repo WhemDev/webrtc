@@ -4,7 +4,7 @@ const { Server } = require("socket.io");
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: ["http://localhost:3000", "https://duetwebrtc.vercel.app"], // Next.js uygulamanızın adresi
+    origin: ["https://duetwebrtc.vercel.app"], // Next.js uygulamanızın adresi
     methods: ["GET", "POST"],
   },
 });
@@ -28,6 +28,7 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3001, () => {
-  console.log("Socket.IO server is running on http://localhost:3001");
+const port = process.env.PORT || 3001; // Eğer PORT tanımlı değilse varsayılan olarak 3001 kullanılır
+httpServer.listen(port, () => {
+  console.log(`Socket.IO server is running on http://localhost:${port}`);
 });

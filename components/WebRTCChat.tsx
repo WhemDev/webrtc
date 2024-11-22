@@ -154,9 +154,11 @@ const WebRTCChat = () => {
       ) : (
         <div>
           <h3>Room ID: {roomId}</h3>
-          <video ref={userVideo} autoPlay muted style={{ width: "100%", marginBottom: "10px" }} />
-          <video ref={peerVideo} autoPlay style={{ width: "100%", marginBottom: "10px" }} />
-
+          {
+            //<video ref={userVideo} autoPlay muted style={{ width: "100%", marginBottom: "10px" }} />
+            //<video ref={peerVideo} autoPlay style={{ width: "100%", marginBottom: "10px" }} />
+          }
+          
           {/* Mesaj Listesi */}
           <div
             style={{
